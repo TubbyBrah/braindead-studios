@@ -1,0 +1,136 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.92);
+  background-color: #000;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* CRT Flicker + Scanlines Overlay */
+body::before {
+  content: "";
+  background: url('/images/scanlines.png');
+  opacity: 0.05;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: overlay;
+  animation: flicker 3s infinite;
+}
+
+/* Flicker Animation */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 0.05;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.15;
+  }
+}
+
+/* Base resets and layout */
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000;
+  color: white;
+}
+
+/* Logo hover glow */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms ease-in-out;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #00ffffaa);
+}
+
+/* Buttons */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: white;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+button:hover {
+  border-color: #00ffff;
+  background-color: #00ffff;
+  color: black;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Links */
+a {
+  color: #00ffff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Headings */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Card container example */
+.card {
+  padding: 2em;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+/* Optional: for fading text, tooltips, etc */
+.read-the-docs {
+  color: #888;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: 2rem;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #000;
+    background-color: #fff;
+  }
+  a {
+    color: #007acc;
+  }
+  button {
+    background-color: #f0f0f0;
+    color: #000;
+  }
+}

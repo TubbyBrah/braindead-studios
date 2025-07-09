@@ -1,25 +1,19 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getDatabase } from "firebase/database";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+// src/firebase.js
+import { initializeApp } from 'firebase/app';
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase config loaded securely from .env
 const firebaseConfig = {
-  apiKey: "AIzaSyBkDo_A9r0oH4ytkEC6Deub1OEuf59ymtk",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "high-or-die.firebaseapp.com",
   projectId: "high-or-die",
-  storageBucket: "high-or-die.firebasestorage.app",
-  messagingSenderId: "735152447939",
-  appId: "1:735152447939:web:f030cc3a940c120cc11d76",
-  measurementId: "G-8CZVS4J6CV"
+  storageBucket: "high-or-die.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MEASUREMENT_ID"
 };
 
-// Initialize Firebase
+// ✅ Initialize the app
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const database = getDatabase(app);
 
-export { app, database, analytics };
+// ✅ Export the app
+export { app };
