@@ -24,18 +24,28 @@ function App() {
         <h2 className="text-2xl mb-6 text-center">Our Work</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <div className="border p-6 transition-transform duration-300 transform hover:scale-105 hover:border-cyan-400">
-            <h3 className="text-xl mb-2">High or Die</h3>
-            <p className="text-sm text-gray-400">A stylized urban action RPG with surreal elements. Explore, survive, and uncover a deeper truth.</p>
-          </div>
+            <h3 className="text-lg font-bold mb-2">Active Project</h3>
+<p className="text-sm text-gray-400">
+  Explore one of our public works-in-progress.
+</p>
+<a 
+  href="https://highordie.io" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="text-cyan-400 hover:underline text-sm mt-1 inline-block"
+>
+  highordie.io
+</a></div>
           <div className="border p-6 transition-transform duration-300 transform hover:scale-105 hover:border-cyan-400">
-            <h3 className="text-xl mb-2">The Clear</h3>
-            <p className="text-sm text-gray-400">Escape the compound. Reclaim your mind. A psychological survival FPS.</p>
-          </div>
+            <h3 className="text-lg font-bold mb-2">Classified</h3>
+<p className="text-sm text-gray-400 italic">
+  We can't show you this one yet... but it's cooking.
+</p></div>
           <div className="border p-6 transition-transform duration-300 transform hover:scale-105 hover:border-cyan-400">
-  <h3 className="text-xl font-bold mb-2">Coolabah Boys</h3>
-  <p className="text-sm text-gray-300">
-    Fast-paced endless runner with a unique Australian flair. High-energy and highly replayable.
-  </p>
+  <h3 className="text-lg font-bold mb-2">Project Three</h3>
+<p className="text-sm text-gray-400">
+  Currently in development. Details coming soon.
+</p>
 </div>
         </div>
       </section>
