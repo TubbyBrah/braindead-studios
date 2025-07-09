@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '/assets/logo.png';
-
+//addng some text 
 function App() {
   return (
     <div className="min-h-screen bg-black text-white font-mono px-4 pt-10">
